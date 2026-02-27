@@ -1,8 +1,11 @@
-const waitlist = [];
+// 1. Create a reusable wait function
+const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-// Add someone to the list
-waitlist.push("User A"); 
-waitlist.push("User B");
+// 2. Use it inside an async function
+async function runWithDelay() {
+  console.log("Starting...");
+  await wait(2000); // Pauses for 2 seconds
+  console.log("2 seconds later!");
+}
 
-// Process the next person in line
-const nextInLine = waitlist.shift(); // "User A"
+runWithDelay();
