@@ -1,0 +1,327 @@
+/* ==========================================================================
+   1. Design Variables & Global Setup
+   ========================================================================== */
+:root {
+    --primary: #0A3161;      /* Deep Navy */
+    --accent: #B31942;       /* Barber Red */
+    --dark: #0a26f7;         /* Off-Black */
+    --light: #F4F4F4;        /* Light Grey Background */
+    --white: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. Header Navigation Layout (Flexbox Row)
+   ========================================================================== */
+.navbar {
+    background-color: var(--dark);
+    border-bottom: 4px solid var(--accent);
+    padding: 15px 0;
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-between; /* Splitting logo left and links right */
+    align-items: center;            /* Vertical alignment tracking */
+}
+
+.logo {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;                      /* Clean spacing property between links */
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* ==========================================================================
+   3. Hero Section Layout (Flexbox Columns)
+   ========================================================================== */
+.hero-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 60px 20px;
+}
+
+.hero-text, .hero-image {
+    flex: 1;                        /* Forces columns to share equal 50% spacing */
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+}
+
+/* ==========================================================================
+   4. Services Grid Layout (Flexbox Row Wrapping)
+   ========================================================================== */
+.services-bg {
+    background-color: var(--light);
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--dark);
+}
+
+.services-flex {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;               /* Ensures content shifts downward smoothly on smaller screens */
+}
+
+.service-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    flex: 1;
+    min-width: 280px;               /* Locks grid scaling breaking boundaries */
+    max-width: 340px;
+    text-align: center;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.service-card .price {
+    display: block;
+    color: var(--primary);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   5. Mobile Responsiveness Breakpoints
+   ========================================================================== */
+@media (max-width: 768px) {
+    .nav-flex {
+        flex-direction: column;    /* Stack logo over list items on mobile */
+        gap: 15px;
+    }
+
+    .hero-flex {
+        flex-direction: column-reverse; /* Put image above text layout logic on mobile screen sizes */
+        text-align: center;
+        gap: 30px;
+    }
+}
+/* ==========================================================================
+   6. Waiting List Section Layout (Flexbox Split columns)
+   ========================================================================== */
+.waiting-bg {
+    background-color: var(--white);
+    padding: 60px 0;
+    border-top: 1px solid #e9e9e9;
+}
+
+.waiting-flex {
+    display: flex;
+    gap: 50px;
+    align-items: stretch; /* Forces both blocks to scale to the same height */
+}
+
+.waiting-form-wrapper, .waiting-status-card {
+    flex: 1;
+    min-width: 300px;
+}
+
+.waiting-form-wrapper h2 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.waiting-form-wrapper p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Flexbox Form Structure */
+.flex-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+
+.form-group input, .form-group select {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--primary);
+}
+
+.btn-submit {
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    padding: 14px;
+    margin-top: 10px;
+}
+
+/* Status Card Styling (Flex Box Column Container) */
+.waiting-status-card {
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    border-left: 6px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+}
+
+.waiting-status-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.status-badge {
+    align-self: flex-start; /* Keeps the badge tight around the text */
+    background-color: #2ec4b6;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.queue-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+.status-note {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   7. Mobile Responsiveness Extension
+   ========================================================================== */
+@media (max-width: 768px) {
+    .waiting-flex {
+        flex-direction: column;
+        gap: 40px;
+    }
+}

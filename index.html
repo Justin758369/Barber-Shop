@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber Shop | Professional Cuts</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- Flexbox Header & Nav -->
+    <header class="navbar">
+        <div class="container nav-flex">
+            <div class="logo">Jimmy Lee's Barber Shop</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Flexbox Split Hero Section -->
+        <section id="about" class="container hero-flex">
+            <div class="hero-text">
+                <h1>Premium Barbering & Grooming</h1>
+                <p>We combine traditional straight-razor skillsets with modern haircut trends. Step in, grab a beverage, and walk out looking your absolute best.</p>
+                <a href="#services" class="btn">View Services</a>
+            </div>
+            <div class="hero-image">
+                <img src="img/us flag barber shop.avif" alt="Barber shop layout displaying US flag">
+            </div>
+        </section>
+
+        <!-- Flexbox Responsive Cards Grid -->
+        <section id="services" class="services-bg">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services-flex">
+                    <div class="service-card">
+                        <h3>Classic Haircut</h3>
+                        <span class="price">$30</span>
+                        <p>Includes complete consultation, custom fade or trim, and hot neck shave.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Beard Sculpting</h3>
+                        <span class="price">$20</span>
+                        <p>Trimming, line-up with straight-razor, and premium beard oil application.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Hot Towel Shave</h3>
+                        <span class="price">$35</span>
+                        <p>Traditional multi-pass straight-razor face shave with soothing oils.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+<!-- Flexbox Waiting List Section -->
+<section id="waiting-list" class="waiting-bg">
+    <div class="container waiting-flex">
+        
+        <!-- Column 1: Sign Up Form -->
+        <div class="waiting-form-wrapper">
+            <h2>Join Today's Waiting List</h2>
+            <p>Skip the line. Drop your details below, and we will text you when your barber is ready.</p>
+            
+            <form class="flex-form">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" placeholder="GOD Bless America" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="(555) 000-0000" required>
+                </div>
+                <div class="form-group">
+                    <label for="service-select">Select Service</label>
+                    <select id="service-select" required>
+                        <option value="" disabled selected>Choose a service...</option>
+                        <option value="haircut">Classic Haircut ($30)</option>
+                        <option value="beard">Beard Sculpting ($20)</option>
+                        <option value="shave">Hot Towel Shave ($35)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-submit">Submit Request</button>
+            </form>
+        </div>
+
+        <!-- Column 2: Live Queue Status Card -->
+        <div class="waiting-status-card">
+            <h3>Live Shop Status</h3>
+            <div class="status-badge">Open</div>
+            <div class="queue-stats">
+                <div class="stat-box">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">In Queue</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Est. Wait</span>
+                </div>
+            </div>
+            <p class="status-note">⚡ Walk-ins holding a spot online get priority handling upon physical arrival.</p>
+        </div>
+    
+</section>
+       <section id="contact" class="container hero-flex">
+            <div class="hero-text">
+                <div> contact us at <a href="tel:6067921925">606-792-1925</a> or email <a href="mailto:info@usflagbarbershop.com">info@usflagbarbershop.com</a></div>
+
+            </div>
+            <div class="hero-image">
+            </div>
+        </section>
+
+</body>
+</html>
